@@ -4,7 +4,6 @@ import processMarkup from './process-markup';
 import processCSS from './process-css';
 import {build} from 'aurelia-cli';
 import project from '../aurelia.json';
-import revision from './revision';
 
 export default gulp.series(
   readProjectConfiguration,
@@ -13,8 +12,7 @@ export default gulp.series(
     processMarkup,
     processCSS
   ),
-  writeBundles,
-  revision
+  writeBundles
 );
 
 function readProjectConfiguration() {

@@ -63,27 +63,22 @@ define('environment',["exports"], function (exports) {
   };
 });
 define('main',['exports', './environment'], function (exports, _environment) {
-    'use strict';
+  'use strict';
 
-    Object.defineProperty(exports, "__esModule", {
-        value: true
-    });
-    exports.configure = configure;
+  Object.defineProperty(exports, "__esModule", {
+    value: true
+  });
+  exports.configure = configure;
 
-    var _environment2 = _interopRequireDefault(_environment);
+  var _environment2 = _interopRequireDefault(_environment);
 
-    function _interopRequireDefault(obj) {
-        return obj && obj.__esModule ? obj : {
-            default: obj
-        };
-    }
+  function _interopRequireDefault(obj) {
+    return obj && obj.__esModule ? obj : {
+      default: obj
+    };
+  }
 
-    Promise.config({
-        warnings: {
-            wForgottenReturn: false
-        }
-    });
-
+<<<<<<< HEAD
     function configure(aurelia) {
         aurelia.use.standardConfiguration().feature('resources').plugin('aurelia-dialog', function (config) {
             config.useDefaults();
@@ -91,19 +86,29 @@ define('main',['exports', './environment'], function (exports, _environment) {
             config.settings.centerHorizontalOnly = false;
             config.settings.startingZIndex = 5;
         });
-
-        if (_environment2.default.debug) {
-            aurelia.use.developmentLogging();
-        }
-
-        if (_environment2.default.testing) {
-            aurelia.use.plugin('aurelia-testing');
-        }
-
-        aurelia.start().then(function () {
-            return aurelia.setRoot();
-        });
+=======
+  Promise.config({
+    warnings: {
+      wForgottenReturn: false
     }
+  });
+>>>>>>> e411fac4975cb96eac0a02d0c73e7aa6a576a679
+
+  function configure(aurelia) {
+    aurelia.use.standardConfiguration().feature('resources');
+
+    if (_environment2.default.debug) {
+      aurelia.use.developmentLogging();
+    }
+
+    if (_environment2.default.testing) {
+      aurelia.use.plugin('aurelia-testing');
+    }
+
+    aurelia.start().then(function () {
+      return aurelia.setRoot();
+    });
+  }
 });
 define('modal',['exports', 'aurelia-dependency-injection', 'aurelia-binding', 'aurelia-templating'], function (exports, _aureliaDependencyInjection, _aureliaBinding, _aureliaTemplating) {
     'use strict';
