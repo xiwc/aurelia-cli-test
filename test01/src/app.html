@@ -1,3 +1,10 @@
 <template>
-  <h1>${message}</h1>
+    <require from="./app.css"></require>
+    <require from="./modal"></require>
+    <h1>${message}</h1>
+    <modal showing="true" allowKeyClose="true" allowClickClose="true" showCloseButton.bind="!1" close.call="myViewModelCloseFunction()">
+        <h1>Some Heading</h1>
+        <p>My custom content in here</p>
+    </modal>
+    <button click.delegate="submitHandler()">dialog</button>
 </template>

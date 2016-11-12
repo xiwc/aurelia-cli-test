@@ -1,0 +1,16 @@
+<template>
+    <ai-dialog>
+        <ai-dialog-header>
+            <h2>Edit first name</h2>
+        </ai-dialog-header>
+        <ai-dialog-body>
+            <input attach-focus.bind="isNewPerson" value.bind="person.email" />
+            <br/>
+            <input attach-focus.bind="!isNewPerson" value.bind="person.firstName" />
+        </ai-dialog-body>
+        <ai-dialog-footer>
+            <button click.trigger="controller.cancel()">Cancel</button>
+            <button click.trigger="controller.ok(person)">Ok</button>
+        </ai-dialog-footer>
+    </ai-dialog>
+</template>
